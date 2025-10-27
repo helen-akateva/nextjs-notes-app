@@ -9,21 +9,27 @@ import { fetchNotes } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useDebounce } from "use-debounce";
-import css from './NotesPage.module.css';
+import { NoteTag } from "@/types/note";
+import css from "./NotesPage.module.css";
 
-export default function NotesClient() {
+interface NotesClientProps {
+  tag: NoteTag | "all";
+}
+
+export default function NotesClientFilter({ tag }: NotesClientProps) {
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [debouncedSearch] = useDebounce(search, 500);
 
   const { data } = useQuery({
-    queryKey: ["notes", debouncedSearch, currentPage],
+    queryKey: ["notes", debouncedSearch, currentPage, tag],
     queryFn: () =>
       fetchNotes({
         search: debouncedSearch,
         page: currentPage,
         perPage: 12,
+        ...(tag !== "all" ? { tag } : {}),
       }),
     placeholderData: (previousData) => previousData,
   });
@@ -32,6 +38,7 @@ export default function NotesClient() {
     setSearch(value);
     setCurrentPage(1);
   };
+
   const handlePageChange = (selectedItem: { selected: number }) => {
     setCurrentPage(selectedItem.selected + 1);
   };
@@ -54,7 +61,11 @@ export default function NotesClient() {
         </button>
       </header>
 
-      {data?.notes && data.notes.length > 0 && <NoteList notes={data.notes} />}
+      {data?.notes && data.notes.length > 0 ? (
+        <NoteList notes={data.notes} />
+      ) : (
+        <p>No notes found</p>
+      )}
 
       {isModalOpen && (
         <Modal onClose={() => setIsModalOpen(false)}>
@@ -64,4 +75,3 @@ export default function NotesClient() {
     </div>
   );
 }
-
