@@ -3,7 +3,7 @@ import {
   dehydrate,
   HydrationBoundary,
   QueryClient,
-} from "@tanstack/react-query";
+} from "@tanstack/react-query"
 import NoteDetails from "./NoteDetails.client";
 
 export default async function NoteDetailsPage({
