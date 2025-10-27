@@ -5,7 +5,7 @@ import Modal from "@/components/Modal/Modal";
 import { useRouter } from "next/navigation";
 import css from "./NotePreviewClient.module.css";
 
-const NotePreviewClient = () => {
+export default function NotePreviewClient ()  {
   const router = useRouter();
   const close = () => router.back();
 
@@ -21,4 +21,3 @@ const NotePreviewClient = () => {
   );
 };
 
-export default NotePreviewClient;
