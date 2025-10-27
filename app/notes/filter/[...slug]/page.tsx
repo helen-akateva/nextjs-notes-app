@@ -11,7 +11,7 @@ interface NotesPageProps {
   params: Promise<{ slug: [NoteTag | "all"] }>;
 }
 
-const NotesPage = async ({ params }: NotesPageProps) => {
+export default async function NotesPage  ({ params }: NotesPageProps)  {
   const queryClient = new QueryClient();
 
   const { slug } = await params;
@@ -29,4 +29,3 @@ const NotesPage = async ({ params }: NotesPageProps) => {
   );
 };
 
-export default NotesPage;
