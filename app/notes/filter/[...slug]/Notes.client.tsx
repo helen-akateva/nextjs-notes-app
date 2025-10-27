@@ -11,7 +11,7 @@ import { useState } from "react";
 import { useDebounce } from "use-debounce";
 import css from './NotesPage.module.css';
 
-export default function Notes() {
+export default function NotesClient() {
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
