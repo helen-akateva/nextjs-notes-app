@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Notes App
 
-## Getting Started
+A modern note-taking application built with Next.js 16, featuring advanced routing, server-side rendering, and a sleek user interface. This project demonstrates Next.js App Router capabilities with parallel routes, intercepting routes, and server actions.
 
-First, run the development server:
+## 🚀 Demo
+
+[Live Demo](https://your-demo-link.vercel.app) 
+
+## 📋 Description
+
+This is a full-featured notes management application that allows users to create, read, update, and delete notes. The app showcases modern Next.js features including:
+
+- Server and client components
+- Parallel routes for modal dialogs
+- Intercepting routes for seamless navigation
+- Server actions for data mutations
+- Advanced routing with dynamic segments
+- Pagination and search functionality
+- Responsive design with Tailwind CSS
+
+## 🛠️ Technologies & Stack
+
+- **Framework:** Next.js 16.0.0
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **State Management:** TanStack React Query 5.90.5
+- **HTTP Client:** Axios 1.12.2
+- **Form Handling:** Formik 2.4.6
+- **Validation:** Yup 1.7.1
+- **Utilities:** 
+  - use-debounce (search optimization)
+  - react-paginate (pagination UI)
+
+## ✨ Functionality
+
+- ✅ **Create Notes:** Add new notes with title and content
+- ✅ **View Notes:** Browse all notes with pagination support
+- ✅ **Search Notes:** Filter notes with debounced search
+- ✅ **Edit Notes:** Update existing notes inline
+- ✅ **Delete Notes:** Remove notes with confirmation
+- ✅ **Modal Navigation:** Intercept routes for seamless modal experience
+- ✅ **Server-Side Rendering:** Fast initial page loads with SSR
+- ✅ **Responsive Design:** Works on desktop and mobile devices
+- ✅ **Loading States:** Skeleton screens and loading indicators
+- ✅ **Error Handling:** Custom 404 and error pages
+
+## 🏃 Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## 📦 Build
+
+To create a production build:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔗 Links
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [TanStack Query Documentation](https://tanstack.com/query/latest)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 👤 Author
 
-## Learn More
+**Olena Akatieva**
 
-To learn more about Next.js, take a look at the following resources:
+- LinkedIn: [linkedin.com/in/olena-akatieva](https://linkedin.com/in/olena-akatieva)
+- GitHub: [@helen-akateva](https://github.com/helen-akateva)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Deployed on Vercel*
